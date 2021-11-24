@@ -1,0 +1,28 @@
+.title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    /* text-align: center; */
+    font-size: 30px;
+}
+
+.list {
+    padding-left: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.item:not(last-child) {
+    margin-bottom: 5px;
+}
+
+.btn {
+    margin-left: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn:hover, .btn:focus {
+  background-color: rgb(31, 198, 204);
+}
