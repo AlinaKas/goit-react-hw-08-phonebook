@@ -39,37 +39,34 @@ export default function RegisterPage() {
 
       <form className={s.form} onSubmit={handleSubmit} autoComplete="off">
         <label className={s.label}>
-          User Name
           <input
             className={s.input}
             type="text"
             name="name"
             value={name}
-            placeholder="Ivan Petrov"
+            placeholder="User Name"
             onChange={handleChange}
           />
         </label>
 
         <label className={s.label}>
-          E-mail
           <input
             className={s.input}
             type="email"
             name="email"
             value={email}
-            placeholder="exapmle@mail.com"
+            placeholder="E-mail : exapmle@mail.ru"
             onChange={handleChange}
           />
         </label>
 
         <label className={s.label}>
-          Password
           <input
             className={s.input}
             type="password"
             name="password"
             value={password}
-            placeholder="*******"
+            placeholder="Password: XXXXXXXX"
             onChange={handleChange}
           />
         </label>

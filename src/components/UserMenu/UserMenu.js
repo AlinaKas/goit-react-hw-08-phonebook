@@ -1,14 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { authSelectors, authOperations } from 'redux/auth';
 import s from './UserMenu.module.css';
+import avatarDefault from 'images/avatar-default.png';
 
 function UserMenu() {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
+  const avatar = avatarDefault;
 
   return (
     <div className={s.container}>
-      <span className={s.text}> Welcome, {name}</span>
+      <img src={avatar} alt="default avatar" className={s.avatar} />
+      <span className={s.text}>
+        Welcome, <span className={s.name}>{name}</span>
+      </span>
       <button
         className={s.button}
         type="button"
