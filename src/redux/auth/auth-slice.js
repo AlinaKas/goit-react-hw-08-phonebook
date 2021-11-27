@@ -13,25 +13,43 @@ const initialState = {
   error: null,
   isLoggedIn: false,
   isLoading: false,
-  isAuth: false,
+  // isAuth: false,
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  // reducers: {
-  //   greetingChange: (state, action) => {
-  //     return {
-  //       ...state,
-  //       greeting: action.payload,
-  //     };
-  //   },
-  // },
   extraReducers: {
+    [authOperations.register.pending](state, action) {
+      state.isLoading = true;
+    },
     [authOperations.register.fulfilled](state, action) {
+      state.isLoading = false;
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
+      // state.isAuth = true;
+    },
+    [authOperations.register.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+
+    [authOperations.logIn.pending](state, action) {
+      state.isLoading = true;
+    },
+
+    [authOperations.logIn.fulfilled](state, action) {
+      state.isLoading = false;
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+      state.isLoggedIn = true;
+      // state.isAuth = true;
+    },
+    [authOperations.logIn.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload.error;
+      console.log(action.payload);
     },
   },
 });

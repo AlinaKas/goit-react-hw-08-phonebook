@@ -1,10 +1,10 @@
 import { Navigate } from 'react-router-dom';
 
-export default function PrivateRoute({ isAuth, component: Component }) {
+export default function PrivateRoute({ isLoggedIn, component: Component }) {
   return (
     <>
       <h1>PrivateRoute</h1>
-      {isAuth ? <Component /> : <Navigate to="/login" />}
+      {isLoggedIn ? <Component /> : <Navigate to="/login" />}
     </>
   );
 }

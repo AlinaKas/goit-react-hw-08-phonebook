@@ -29,16 +29,6 @@ export const addContact = createAsyncThunk(
   },
 );
 
-// вариант AddContact без отлавливания ошибки
-
-// export const addContact = createAsyncThunk(
-//   'contacts/addContact',
-//   async ({ name, phone }) => {
-//     const { data } = await axios.post('/contacts', { name, phone });
-//     return data;
-//   },
-// );
-
 export const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
   async (id, { rejectWithValue }) => {

@@ -27,7 +27,7 @@ const register = createAsyncThunk(
       return data;
     } catch (error) {
       toast.error(`Invalid data`);
-      return rejectWithValue(error);
+      return rejectWithValue({ error: error.message });
     }
   },
 );
@@ -39,8 +39,8 @@ const logIn = createAsyncThunk(
       const { data } = await axios.post(userLogin, user);
       return data;
     } catch (error) {
-      toast.error(`Incorrect NAME or PASSWORD`);
-      return rejectWithValue(error);
+      toast.error(`Incorrect E-MAIL or PASSWORD`);
+      return rejectWithValue({ error: error.message });
     }
   },
 );

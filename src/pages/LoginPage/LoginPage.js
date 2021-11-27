@@ -35,6 +35,7 @@ export default function LoginPage() {
             className={s.input}
             type="email"
             name="email"
+            placeholder="exapmle@mail.ru"
             value={email}
             onChange={handleChange}
           />
@@ -46,6 +47,7 @@ export default function LoginPage() {
             className={s.input}
             type="password"
             name="password"
+            placeholder="*******"
             value={password}
             onChange={handleChange}
           />

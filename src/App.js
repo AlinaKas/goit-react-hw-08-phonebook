@@ -4,11 +4,12 @@
 import PreLoader from 'components/Preloader/Preloader';
 import AppBar from 'components/AppBar';
 import { lazy, Suspense } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import PrivateRoute from 'routes/PrivateRoute';
 import PublicRoute from 'routes/PublicRoute';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Container from 'components/Container';
 
 const HomePage = lazy(() =>
   import('./pages/HomePage' /* webpackChunkName: "home-page" */),
@@ -32,7 +33,7 @@ const isAuth = false;
 function App() {
   // render() {
   return (
-    <>
+    <Container>
       <AppBar />
       <main>
         <Suspense fallback={<PreLoader />}>
@@ -56,7 +57,7 @@ function App() {
         </Suspense>
         <ToastContainer position="top-right" autoClose={3000} theme="dark" />
       </main>
-    </>
+    </Container>
   );
 }
 // }

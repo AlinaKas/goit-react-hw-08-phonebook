@@ -45,6 +45,7 @@ export default function RegisterPage() {
             type="text"
             name="name"
             value={name}
+            placeholder="Ivan Petrov"
             onChange={handleChange}
           />
         </label>
@@ -56,6 +57,7 @@ export default function RegisterPage() {
             type="email"
             name="email"
             value={email}
+            placeholder="exapmle@mail.com"
             onChange={handleChange}
           />
         </label>
@@ -67,6 +69,7 @@ export default function RegisterPage() {
             type="password"
             name="password"
             value={password}
+            placeholder="*******"
             onChange={handleChange}
           />
         </label>
