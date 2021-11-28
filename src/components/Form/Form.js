@@ -51,7 +51,7 @@ const Form = () => {
       {/* <h1 className={s.title}>Phonebook</h1> */}
       <form className={s.form} onSubmit={handleSubmit}>
         <label className={s.label}>
-          Name
+          <span className={s.descriptionName}>Name</span>
           <input
             className={s.input}
             type="text"
@@ -65,7 +65,7 @@ const Form = () => {
           />
         </label>
         <label className={s.label}>
-          Number
+          <span className={s.descriptionNumber}>Number</span>
           <input
             className={s.input}
             type="tel"

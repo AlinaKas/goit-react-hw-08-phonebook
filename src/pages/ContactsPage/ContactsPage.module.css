@@ -1,8 +1,16 @@
-.title {
-    margin-bottom: 10px;
-    color: rgba(0, 141, 145, 0.833);;
+.wrapper {
+  width: 50%;
+  margin: 50px auto;
+  padding: 30px;
+  text-align: start;
+  /* background-color: rgba(35, 29, 29, 0.881); */
+  border-radius: 20px;
+  border: 1px solid rgba(52, 52, 52, 0.922);
+  box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
 }
 
-.name {
-     text-transform: uppercase;
+.title {
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.833);;
 }

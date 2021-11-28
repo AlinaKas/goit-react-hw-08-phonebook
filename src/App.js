@@ -70,7 +70,7 @@ function App() {
               element={
                 <PublicRoute
                   component={RegisterPage}
-                  redirectTo="/contacts"
+                  redirectTo="/"
                   restricted
                 />
               }

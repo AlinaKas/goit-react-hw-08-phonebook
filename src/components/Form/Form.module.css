@@ -1,12 +1,4 @@
-.container {
-  max-width: 400px;
-  margin: 70px auto;
-  padding: 30px;
-  /* background-color: rgba(35, 29, 29, 0.881); */
-  border-radius: 20px;
-  box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
-     border: 1px solid rgba(52, 52, 52, 0.922);
-}
+
 
 .form {
     display: flex;
@@ -15,7 +7,8 @@
     /* margin-bottom: 20px;
     font-family: Arial, Helvetica, sans-serif; */
     border: 1px solid black;
-    background-color: rgba(228, 228, 227, 0.678);
+    background-color: rgba(151, 151, 151, 0.884);
+    border-radius: 20px;
 }
 .title {
     /* text-align: center; */
@@ -26,16 +19,28 @@
     /* display: flex;
     flex-direction: column; */
     margin-bottom: 20px;
+    margin-right: 10px;
    font-weight: 500;
    font-size: 20px;
+   color:rgb(255, 255, 255);
 }
+
+.descriptionName{
+    margin-right: 29px;
+}
+
+.descriptionNumber{
+    margin-right: 10px;
+}
+
 .input{
     width: 70%;
     height: 25px;
     padding-left: 12px;
     padding-top: 2px;
     padding-bottom: 2px;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: none;
     outline-color: rgb(25, 121, 124);
 
 }
@@ -43,11 +48,15 @@
     width: 150px;
     height: 30px;
     font-size: 20px;
-    background-color: rgba(184, 196, 196, 0.795);
-    border-radius: 20px;
-    cursor: pointer;
+    margin: 0 auto;
+     color: #ffffff;
+  background-color: rgba(5, 167, 173, 0.839);
+  border: none;
+  border-radius: 20px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .btn:hover, .btn:focus {
-  background-color: rgb(31, 198, 204);
+   background-color: rgba(35, 29, 29, 0.881);
 }
