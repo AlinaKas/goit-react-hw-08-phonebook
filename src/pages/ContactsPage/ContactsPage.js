@@ -10,8 +10,8 @@ export default function ContactsPage() {
       <div className={s.wrapper}>
         <Form />
         <Filter />
+        <ContactList />
       </div>
-      <ContactList />
     </div>
   );
 }

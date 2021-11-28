@@ -38,6 +38,7 @@ const ContactsPage = lazy(() =>
 
 function App() {
   const dispatch = useDispatch();
+  // const isFetchingCurrentUser = useSelector(authSelectors.getIsCurrentUser)
 
   useEffect(() => {
     dispatch(authOperations.refreshCurrentUser());

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import s from './ContactList.module.css';
-// import { connect } from 'react-redux';
+import PreLoader from 'components/Preloader/Preloader';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import {
@@ -16,8 +16,6 @@ import {
 } from 'redux/contacts/contacts-selectors';
 
 const ContactList = () => {
-  // const contacts = useSelector(getContacts);
-  // const filter = useSelector(getFilter);
   const dispatch = useDispatch();
   const contacts = useSelector(getVisibleContacts);
   const loading = useSelector(getLoader);
@@ -28,22 +26,29 @@ const ContactList = () => {
 
   return (
     <>
-      <h2 className={s.title}>Contacts</h2>
-      <ul className={s.list}>
-        {contacts.map(({ name, phone, id }) => (
-          <li key={id} className={s.item}>
-            {`${name}: ${phone}`}
-            <button
-              className={s.btn}
-              type="button"
-              onClick={() => dispatch(deleteContact(id))}
-            >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
-      {loading && <h1 className={s.title}>Loading...</h1>}
+      {contacts.length === 0 ? (
+        <h2 className={s.title}>No contacts in the PhoneBook</h2>
+      ) : (
+        <div className={s.container}>
+          <h2 className={s.title}>Contacts</h2>
+          <ul className={s.list}>
+            {contacts.map(({ name, number, id }) => (
+              <li key={id} className={s.item}>
+                <span className={s.description}>{`${name}: ${number}`}</span>
+                <button
+                  className={s.btn}
+                  type="button"
+                  onClick={() => dispatch(deleteContact(id))}
+                >
+                  Delete
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {loading && <PreLoader />}
     </>
   );
 };

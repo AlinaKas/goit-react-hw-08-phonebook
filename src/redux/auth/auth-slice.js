@@ -13,7 +13,7 @@ const initialState = {
   error: null,
   isLoggedIn: false,
   isLoading: false,
-  // isFetchingCurrentUser: false,
+  isFetchingCurrentUser: false,
 };
 
 const authSlice = createSlice({
@@ -70,21 +70,21 @@ const authSlice = createSlice({
 
     [authOperations.refreshCurrentUser.pending](state, action) {
       state.isLoading = true;
-      // state.isFetchingCurrentUser = true;
+      state.isFetchingCurrentUser = true;
     },
 
     [authOperations.refreshCurrentUser.fulfilled](state, action) {
       state.isLoading = false;
       state.user = action.payload;
       state.isLoggedIn = true;
-      // state.isFetchingCurrentUser = false;
+      state.isFetchingCurrentUser = false;
     },
 
     [authOperations.refreshCurrentUser.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
       state.isLoggedIn = false;
-      // state.isFetchingCurrentUser = false;
+      state.isFetchingCurrentUser = false;
     },
   },
 });

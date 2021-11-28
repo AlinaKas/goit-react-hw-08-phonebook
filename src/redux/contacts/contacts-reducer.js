@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
-import {
-  filterContact,
-} from './contacts-actions';
+import { filterContact } from './contacts-actions';
 import {
   fetchContacts,
   addContact,
@@ -48,4 +46,3 @@ export default combineReducers({
   filter,
   loading,
 });
-
