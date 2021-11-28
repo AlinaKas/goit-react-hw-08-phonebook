@@ -36,7 +36,6 @@ export default function RegisterPage() {
   return (
     <div className={s.container}>
       <h1 className={s.title}>Registration Form</h1>
-      <p>Are you new user? Fill the for join</p>
 
       <form className={s.form} onSubmit={handleSubmit} autoComplete="off">
         <label className={s.label}>
