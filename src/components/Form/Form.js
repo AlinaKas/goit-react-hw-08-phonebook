@@ -47,8 +47,8 @@ const Form = () => {
   };
 
   return (
-    <>
-      <h1 className={s.title}>Phonebook</h1>
+    <div className={s.container}>
+      {/* <h1 className={s.title}>Phonebook</h1> */}
       <form className={s.form} onSubmit={handleSubmit}>
         <label className={s.label}>
           Name
@@ -82,7 +82,7 @@ const Form = () => {
           Add contact
         </button>
       </form>
-    </>
+    </div>
   );
 };
 

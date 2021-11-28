@@ -52,7 +52,7 @@ function App() {
             <Route
               path="/"
               element={
-                <PrivateRoute component={HomePage} redirectTo="/contacts" />
+                <PublicRoute component={HomePage} redirectTo="/contacts" />
               }
             />
             <Route
@@ -70,7 +70,7 @@ function App() {
               element={
                 <PublicRoute
                   component={RegisterPage}
-                  redirectTo="/"
+                  redirectTo="/contacts"
                   restricted
                 />
               }

@@ -30,22 +30,24 @@ export default function LoginPage() {
       <h1 className={s.title}>Log in</h1>
       <form className={s.form} onSubmit={handleSubmit} autoComplete="off">
         <label className={s.label}>
+          E-mail
           <input
             className={s.input}
             type="email"
             name="email"
-            placeholder="E-mail : exapmle@mail.ru"
+            placeholder="exapmle@mail.ru"
             value={email}
             onChange={handleChange}
           />
         </label>
 
         <label className={s.label}>
+          Password
           <input
             className={s.input}
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="XXXXXXX"
             value={password}
             onChange={handleChange}
           />

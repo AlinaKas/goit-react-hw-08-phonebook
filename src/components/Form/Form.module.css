@@ -1,11 +1,21 @@
+.container {
+  max-width: 400px;
+  margin: 70px auto;
+  padding: 30px;
+  /* background-color: rgba(35, 29, 29, 0.881); */
+  border-radius: 20px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
+     border: 1px solid rgba(52, 52, 52, 0.922);
+}
+
 .form {
     display: flex;
     flex-direction: column;
-    width: 400px;
     padding: 20px;
-    margin-bottom: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    /* margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif; */
     border: 1px solid black;
+    background-color: rgba(228, 228, 227, 0.678);
 }
 .title {
     /* text-align: center; */
@@ -13,15 +23,15 @@
 }
 
 .label {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     margin-bottom: 20px;
    font-weight: 500;
    font-size: 20px;
 }
 .input{
-    width: 60%;
-    height: 20px;
+    width: 70%;
+    height: 25px;
     padding-left: 12px;
     padding-top: 2px;
     padding-bottom: 2px;

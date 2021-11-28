@@ -36,9 +36,11 @@ export default function RegisterPage() {
   return (
     <div className={s.container}>
       <h1 className={s.title}>Registration Form</h1>
+      <p>Are you new user? Fill the for join</p>
 
       <form className={s.form} onSubmit={handleSubmit} autoComplete="off">
         <label className={s.label}>
+          Login
           <input
             className={s.input}
             type="text"
@@ -50,23 +52,25 @@ export default function RegisterPage() {
         </label>
 
         <label className={s.label}>
+          E-mail
           <input
             className={s.input}
             type="email"
             name="email"
             value={email}
-            placeholder="E-mail : exapmle@mail.ru"
+            placeholder="exapmle@mail.ru"
             onChange={handleChange}
           />
         </label>
 
         <label className={s.label}>
+          Password
           <input
             className={s.input}
             type="password"
             name="password"
             value={password}
-            placeholder="Password: XXXXXXXX"
+            placeholder="XXXXXXXX"
             onChange={handleChange}
           />
         </label>
