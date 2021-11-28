@@ -30,8 +30,9 @@ const persistedReducer = persistReducer(authPersistConfig, authReducer);
 const store = configureStore({
   reducer: {
     auth: persistedReducer,
-    // contacts: contactsReducer,
+    contacts: contactsReducer,
   },
+
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {

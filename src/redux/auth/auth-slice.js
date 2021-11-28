@@ -13,7 +13,7 @@ const initialState = {
   error: null,
   isLoggedIn: false,
   isLoading: false,
-  // isAuth: false,
+  // isFetchingCurrentUser: false,
 };
 
 const authSlice = createSlice({
@@ -45,13 +45,11 @@ const authSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
-      // state.isAuth = true;
     },
 
     [authOperations.logIn.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
-      // console.log(action.payload);
     },
 
     [authOperations.logOut.pending](state, action) {
@@ -72,18 +70,21 @@ const authSlice = createSlice({
 
     [authOperations.refreshCurrentUser.pending](state, action) {
       state.isLoading = true;
+      // state.isFetchingCurrentUser = true;
     },
 
     [authOperations.refreshCurrentUser.fulfilled](state, action) {
       state.isLoading = false;
       state.user = action.payload;
       state.isLoggedIn = true;
+      // state.isFetchingCurrentUser = false;
     },
 
     [authOperations.refreshCurrentUser.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
-      // state.isLoggedIn = false;
+      state.isLoggedIn = false;
+      // state.isFetchingCurrentUser = false;
     },
   },
 });

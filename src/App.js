@@ -3,14 +3,14 @@
 // import Filter from 'components/Filter';
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useSelector } from 'react';
 import { useDispatch } from 'react-redux';
 import PrivateRoute from 'routes/PrivateRoute';
 import PublicRoute from 'routes/PublicRoute';
 import Container from 'components/Container';
 import AppBar from 'components/AppBar';
 import PreLoader from 'components/Preloader/Preloader';
-import { authOperations } from 'redux/auth';
+import { authOperations, authSelectors } from 'redux/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -36,7 +36,6 @@ const ContactsPage = lazy(() =>
 //   ),
 // );
 
-// const isAuth = false;
 function App() {
   const dispatch = useDispatch();
 
@@ -50,20 +49,39 @@ function App() {
       <main>
         <Suspense fallback={<PreLoader />}>
           <Routes>
-            <Route path="/" element={<PrivateRoute component={HomePage} />} />
+            <Route
+              path="/"
+              element={
+                <PrivateRoute component={HomePage} redirectTo="/contacts" />
+              }
+            />
             <Route
               path="/login"
-              element={<PublicRoute component={LoginPage} />}
+              element={
+                <PublicRoute
+                  component={LoginPage}
+                  redirectTo="/contacts"
+                  restricted
+                />
+              }
             />
             <Route
               path="/register"
-              element={<PublicRoute component={RegisterPage} />}
+              element={
+                <PublicRoute
+                  component={RegisterPage}
+                  redirectTo="/"
+                  restricted
+                />
+              }
             />
             <Route
               path="/contacts"
-              element={<PrivateRoute component={ContactsPage} />}
+              element={
+                <PrivateRoute component={ContactsPage} redirectTo="/login" />
+              }
             />
-            {/* <Route path="*" element={<NotFound />} /> */}
+            {/* <Route path="*" element={'Error'} /> */}
           </Routes>
         </Suspense>
         <ToastContainer position="top-right" autoClose={3000} theme="dark" />

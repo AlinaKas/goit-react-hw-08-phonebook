@@ -33,7 +33,7 @@ const register = createAsyncThunk(
       return data;
     } catch (error) {
       toast.error(`Invalid data`);
-      return rejectWithValue({ error: error.message });
+      return rejectWithValue(error.message);
     }
   },
 );
@@ -47,7 +47,7 @@ const logIn = createAsyncThunk(
       return data;
     } catch (error) {
       toast.error(`Incorrect E-MAIL or PASSWORD`);
-      return rejectWithValue({ error: error.message });
+      return rejectWithValue(error.message);
     }
   },
 );
@@ -67,7 +67,7 @@ const logOut = createAsyncThunk(
       token.unset();
     } catch (error) {
       toast.error(`Error`);
-      return rejectWithValue({ error: error.message });
+      return rejectWithValue(error.message);
     }
   },
 );
@@ -98,7 +98,7 @@ const refreshCurrentUser = createAsyncThunk(
       return response.data;
     } catch (error) {
       toast.error(`Error// invalid token`);
-      return thunkAPI.rejectWithValue({ error: error.message });
+      return thunkAPI.rejectWithValue(error.message);
     }
   },
 );

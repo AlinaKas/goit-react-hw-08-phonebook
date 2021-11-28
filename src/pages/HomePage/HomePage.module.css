@@ -1,3 +1,24 @@
+.container {
+    margin: 150px auto;
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    height: 200px;
+    background-color: rgba(251, 255, 245, 0.664);
+    border-radius: 50%;
+    color: #ffffff;
+}
 .title {
-    color:blue;
+    margin-bottom: 10px;
+    color: rgba(0, 141, 145, 0.833);;
+}
+
+.name {
+     text-transform: uppercase;
+}
+
+.text{
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
 }

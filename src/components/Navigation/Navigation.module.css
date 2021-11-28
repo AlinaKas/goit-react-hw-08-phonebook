@@ -1,5 +1,5 @@
 
-.link{
+.item{
 display: inline-block;
 padding: 10px;
 margin-right: 10px;
@@ -14,3 +14,4 @@ text-decoration: none; */
   composes: link;
   color: #ffffff;
 } */
+
