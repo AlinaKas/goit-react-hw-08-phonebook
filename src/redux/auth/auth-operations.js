@@ -97,7 +97,7 @@ const refreshCurrentUser = createAsyncThunk(
       const response = await axios.get(userCurrent);
       return response.data;
     } catch (error) {
-      toast.error(`Error// invalid token`);
+      // toast.error(`Error// invalid token`);
       return thunkAPI.rejectWithValue(error.message);
     }
   },
