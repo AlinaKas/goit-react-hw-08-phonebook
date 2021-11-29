@@ -41,9 +41,9 @@ const Form = () => {
     const duplicateContact = contacts.find(contact => {
       return (
         (contact.name.toLowerCase() === name.toLowerCase() &&
-          toast.info(`You have "${name}" in the PhoneBook`)) ||
+          toast.info(`The contact with name "${name}" already exists`)) ||
         (contact.number === number &&
-          toast.info(`You have "${number}" in the PhoneBook`))
+          toast.info(`The contact with tel. "${number}" already exists`))
       );
     });
 

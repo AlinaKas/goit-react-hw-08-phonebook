@@ -73,6 +73,6 @@ color: rgba(255, 255, 255, 0.819);
 }
 
 
-.button:hover, .button:focus {
-  background-color:rgba(0, 229, 237, 0.798);
+.button:hover {
+  background-color:rgb(25, 121, 124);
 }
