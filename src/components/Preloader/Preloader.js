@@ -3,7 +3,7 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 const PreLoader = () => (
   <div>
-    <Loader type="ThreeDots" color="#018287f9" height={80} width={80} />
+    <Loader type="ThreeDots" color="#05a7ad" height={80} width={80} />
   </div>
 );
 

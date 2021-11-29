@@ -29,11 +29,25 @@ const Form = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    const duplicateContact = contacts.find(
-      contact => contact.name.toLowerCase() === name.toLowerCase(),
-    );
+    // const duplicateContact = contacts.find(
+    //   contact => contact.name.toLowerCase() === name.toLowerCase(),
+    // );
+    // if (duplicateContact) {
+    //   alert(`${name} is already in contacts`);
+    //   resetForm();
+    //   return;
+    // }
+
+    const duplicateContact = contacts.find(contact => {
+      return (
+        (contact.name.toLowerCase() === name.toLowerCase() &&
+          toast.info(`You have "${name}" in the PhoneBook`)) ||
+        (contact.number === number &&
+          toast.info(`You have "${number}" in the PhoneBook`))
+      );
+    });
+
     if (duplicateContact) {
-      alert(`${name} is already in contacts`);
       resetForm();
       return;
     }
@@ -41,25 +55,6 @@ const Form = () => {
     dispatch(addContact({ name, number }));
     resetForm();
   };
-
-  // const duplicateContact = contacts.find(contact => {
-  //   return (
-  //     contact.name.toLowerCase() === name.toLowerCase() ||
-  //     contact.number === number
-  //   );
-  // });
-
-  // if (duplicateContact) {
-  //   toast.info(`You have the same contact in the PhoneBook.`);
-  //   resetForm();
-  //   return;
-  // }
-
-  // if (duplicateContact === number) {
-  //   toast.info(`${number} is already in contacts`);
-  //   resetForm();
-  //   return;
-  // }
 
   const resetForm = () => {
     setName('');
