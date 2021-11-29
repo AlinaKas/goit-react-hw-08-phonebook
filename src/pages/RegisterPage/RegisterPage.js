@@ -35,7 +35,7 @@ export default function RegisterPage() {
 
   return (
     <div className={s.container}>
-      <h1 className={s.title}>Registration Form</h1>
+      <h1 className={s.title}>SIGN UP</h1>
 
       <form className={s.form} onSubmit={handleSubmit} autoComplete="off">
         <label className={s.label}>
@@ -69,13 +69,13 @@ export default function RegisterPage() {
             type="password"
             name="password"
             value={password}
-            placeholder="XXXXXXXX"
+            placeholder="********"
             onChange={handleChange}
           />
         </label>
 
         <button type="submit" className={s.button}>
-          Sing Up
+          SIGN UP
         </button>
       </form>
     </div>

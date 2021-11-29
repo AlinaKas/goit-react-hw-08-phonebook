@@ -12,12 +12,12 @@ const Filter = () => {
   return (
     <div className={s.container}>
       <label className={s.label}>
-        <span className={s.description}>Find contact by name</span>
+        <span className={s.description}>Find contact</span>
         <input
           className={s.input}
           type="text"
           name="filter"
-          placeholder="Type name for search"
+          placeholder="Type name or phone number"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
           value={value}

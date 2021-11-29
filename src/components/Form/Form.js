@@ -48,7 +48,7 @@ const Form = () => {
 
   return (
     <div className={s.container}>
-      {/* <h1 className={s.title}>Phonebook</h1> */}
+      <h1 className={s.title}>My PhoneBook</h1>
       <form className={s.form} onSubmit={handleSubmit}>
         <label className={s.label}>
           <span className={s.descriptionName}>Name</span>

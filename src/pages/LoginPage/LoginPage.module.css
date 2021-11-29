@@ -44,7 +44,7 @@ color: rgba(255, 255, 255, 0.819);
     padding-bottom: 2px;
     font-size: 18px;
     background-color: rgba(252, 252, 252, 0.771);
-    border-radius: 10px;
+    border-radius: 20px;
     box-sizing: border-box;
     border-color: transparent;
     outline-color: rgba(0, 141, 145, 0.833);
@@ -58,7 +58,7 @@ color: rgba(255, 255, 255, 0.819);
 }
 
 .button {
-  width: 200px;
+  width: 100%;
   margin-top: 10px;
   padding: 15px;
   font-size: 18px;
