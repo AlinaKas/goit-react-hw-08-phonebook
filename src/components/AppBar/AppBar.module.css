@@ -7,14 +7,14 @@
   flex-direction: row;
   /* justify-content: space-around; */
   align-items: center;
-  height: 64px;
+  min-height: 64px;
   padding-right: 20px;
   padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   /* font-family: Arial, Helvetica, sans-serif; */
   color: rgb(15, 11, 11);
-  background-color: rgba(5, 167, 173, 0.842);
+  background-color: rgb(5, 167, 173);
   border-radius: 10px;
   box-shadow: 0px 2px 4px -1px rgba(84, 80, 80, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(62, 59, 59, 0.12);

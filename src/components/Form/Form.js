@@ -4,6 +4,7 @@ import { addContact } from 'redux/contacts/contacts-operations';
 // import { connect } from 'react-redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/contacts/contacts-selectors';
+import { toast } from 'react-toastify';
 
 const Form = () => {
   const [name, setName] = useState('');
@@ -28,14 +29,24 @@ const Form = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    const duplicateContact = contacts.find(
-      contact => contact.name.toLowerCase() === name.toLowerCase(),
-    );
+    const duplicateContact = contacts.find(contact => {
+      return (
+        contact.name.toLowerCase() === name.toLowerCase() ||
+        contact.number === number
+      );
+    });
+
     if (duplicateContact) {
-      alert(`${name} is already in contacts`);
+      toast.info(`You have the same contact in the PhoneBook.`);
       resetForm();
       return;
     }
+
+    // if (duplicateContact === number) {
+    //   toast.info(`${number} is already in contacts`);
+    //   resetForm();
+    //   return;
+    // }
 
     dispatch(addContact({ name, number }));
     resetForm();
@@ -58,7 +69,7 @@ const Form = () => {
             name="name"
             placeholder="Rosie Simpson"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+            title="The name can only consist of letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan, etc."
             required
             value={name}
             onChange={handleInputChange}
@@ -72,7 +83,7 @@ const Form = () => {
             name="number"
             placeholder="+38(0XX)-XXX-XX-XX"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
             value={number}
             onChange={handleInputChange}
@@ -85,11 +96,5 @@ const Form = () => {
     </div>
   );
 };
-
-// const mapDispatchToProps = dispatch => ({
-//   addContact: (name, number) => dispatch(addContact(name, number)),
-// });
-
-// export default connect(null, mapDispatchToProps)(Form);
 
 export default Form;

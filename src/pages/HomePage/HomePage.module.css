@@ -1,7 +1,7 @@
 .container {
     /* display: flex;
     flex-direction: row; */
-    margin: 180px auto;
+    margin: 150px auto;
     padding: 60px 60px;
     text-align: center;
     width: 70%;
@@ -53,5 +53,5 @@ color: #000000;
 .label{
     margin-left: auto;
     font-weight: 700;
-    color: rgba(1, 130, 135, 0.976);
+    color: #018287f9;
 }
