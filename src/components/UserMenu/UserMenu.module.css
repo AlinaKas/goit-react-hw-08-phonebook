@@ -8,21 +8,22 @@
 .name{
   color: rgba(5, 72, 74, 0.99);
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .text {
   margin-right: 10px;
-  font-size: 20px;
+  font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
   color: rgb(35, 29, 29);
 }
 
 .avatar{
   margin-right: 5px;
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
 }
 
 
