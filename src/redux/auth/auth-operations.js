@@ -32,7 +32,14 @@ const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      toast.error(`Invalid data`);
+      if (user.password.length < 7) {
+        toast.error(
+          `Your password is shorter than the minimum allowed length (7).`,
+        );
+      } else {
+        toast.error(`User with ${user.email} already exists`);
+      }
+
       return rejectWithValue(error.message);
     }
   },
@@ -46,7 +53,7 @@ const logIn = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      toast.error(`Incorrect E-MAIL or PASSWORD`);
+      toast.error(`Incorrect e-mail or password`);
       return rejectWithValue(error.message);
     }
   },
@@ -66,7 +73,7 @@ const logOut = createAsyncThunk(
       await axios.post(userLogOut);
       token.unset();
     } catch (error) {
-      toast.error(`Error`);
+      // toast.error(`Error`);
       return rejectWithValue(error.message);
     }
   },
@@ -97,7 +104,7 @@ const refreshCurrentUser = createAsyncThunk(
       const response = await axios.get(userCurrent);
       return response.data;
     } catch (error) {
-      toast.info(`SIGN IN for PHONEBOOK access`);
+      toast.info(`LogIn to access the PhoneBook`);
       return thunkAPI.rejectWithValue(error.message);
     }
   },

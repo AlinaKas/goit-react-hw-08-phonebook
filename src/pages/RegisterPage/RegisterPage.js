@@ -28,6 +28,7 @@ export default function RegisterPage() {
   const handleSubmit = event => {
     event.preventDefault();
     dispatch(authOperations.register({ name, email, password }));
+
     setName('');
     setEmail('');
     setPassword('');
@@ -39,13 +40,13 @@ export default function RegisterPage() {
 
       <form className={s.form} onSubmit={handleSubmit} autoComplete="off">
         <label className={s.label}>
-          Login
+          User
           <input
             className={s.input}
             type="text"
             name="name"
             value={name}
-            placeholder="User Name"
+            placeholder="Name"
             onChange={handleChange}
           />
         </label>
@@ -57,7 +58,7 @@ export default function RegisterPage() {
             type="email"
             name="email"
             value={email}
-            placeholder="exapmle@mail.ru"
+            placeholder="example@mail.com"
             onChange={handleChange}
           />
         </label>
