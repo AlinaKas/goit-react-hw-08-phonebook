@@ -5,10 +5,10 @@ function AuthNav() {
   return (
     <ul className={s.menu}>
       <li className={s.item}>
-        <NavLink to="/login">LogIn</NavLink>
+        <NavLink to="/register">SignUp</NavLink>
       </li>
       <li className={s.item}>
-        <NavLink to="/register">SignUp</NavLink>
+        <NavLink to="/login">LogIn</NavLink>
       </li>
     </ul>
   );

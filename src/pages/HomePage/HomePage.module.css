@@ -1,11 +1,8 @@
 .container {
-    /* display: flex;
-    flex-direction: row; */
     margin: 100px auto;
-    padding: 60px 60px;
+    padding: 40px;
     text-align: center;
     width: 70%;
-    /* height: 200px; */
     background-color: rgba(251, 255, 245, 0.131);
     border-radius: 20px;
      box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;

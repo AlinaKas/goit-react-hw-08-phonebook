@@ -8,48 +8,48 @@ box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
 }
 
 .title {
-    margin-bottom: 5px;
-    font-size: 25px;
+margin-bottom: 5px;
+font-size: 25px;
 }
 
 .titleWrap{
-    composes:title;
-    padding: 5px;
-    background-color: rgba(5, 167, 173, 0.953);
-    color: #ffffff;
-    border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
+composes:title;
+padding: 5px;
+background-color: rgba(5, 167, 173, 0.953);
+color: #ffffff;
+border-radius: 10px;
+box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
 }
 
 .list {
-    font-weight: 500;
-    list-style: none;
+font-weight: 500;
+list-style: none;
 }
 
 .item{
-    display: flex;
-    align-items: center;
-    width: 450px;
-    margin: 0 auto;
-    padding-left: 20px;
-    border: 1px solid black;
-    background-color: rgba(230, 225, 225, 0.726);
-    border-radius: 20px;
-    text-transform: capitalize;
+display: flex;
+align-items: center;
+width: 450px;
+margin: 0 auto;
+padding-left: 20px;
+border: 1px solid black;
+background-color: rgba(230, 225, 225, 0.726);
+border-radius: 20px;
+text-transform: capitalize;
 }
 
 .item:not(last-child) {
-    margin-bottom: 5px;
+margin-bottom: 5px;
 }
 
 .item:before{
-    content: '';
-    margin-right: 10px;
-    /* display: inline-block; */
-    width: 7px;
-    height: 7px;
-    background-color: rgba(5, 167, 173, 0.839);
-    border-radius: 50px;
+content: '';
+margin-right: 10px;
+/* display: inline-block; */
+width: 7px;
+height: 7px;
+background-color: rgba(5, 167, 173, 0.839);
+border-radius: 50px;
 }
 
 .name{
@@ -58,21 +58,21 @@ color: rgb(0, 0, 0);
 }
 
 .btn {
-  margin-left: auto;
-  width: 100px;
-  padding: 5px;
-  font-size: 15px;
-  text-align: center;
-  color: #ffffff;
-  background-color: rgba(5, 167, 173, 0.839);
-  border: 1px solid #ffffff;
-  border-radius: 20px;
-  transition: 0.3s;
-  cursor: pointer;
+margin-left: auto;
+width: 100px;
+padding: 5px;
+font-size: 15px;
+text-align: center;
+color: #ffffff;
+background-color: rgba(5, 167, 173, 0.839);
+border: 1px solid #ffffff;
+border-radius: 20px;
+transition: 0.3s;
+cursor: pointer;
 }
 
 
 .btn:hover {
-   background-color: rgba(35, 29, 29, 0.881);
+background-color: rgba(35, 29, 29, 0.881);
 }
 

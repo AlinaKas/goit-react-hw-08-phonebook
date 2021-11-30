@@ -8,7 +8,6 @@ export default function PublicRoute({
   restricted = false,
 }) {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-
   return (
     <>
       {isLoggedIn && restricted ? <Navigate to={redirectTo} /> : <Component />}

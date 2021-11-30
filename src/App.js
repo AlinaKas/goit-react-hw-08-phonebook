@@ -2,7 +2,7 @@
 // import Form from 'components/Form';
 // import Filter from 'components/Filter';
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PrivateRoute from 'routes/PrivateRoute';
@@ -30,11 +30,11 @@ const ContactsPage = lazy(() =>
   import('./pages/ContactsPage' /* webpackChunkName: "contacts-page" */),
 );
 
-// const NotFoundPage = lazy(() =>
-//   import(
-//     './pages/NotFoundPage/NotFoundPage' /* webpackChunkName: "not-found-page" */
-//   ),
-// );
+const NotFoundPage = lazy(() =>
+  import(
+    './pages/NotFoundPage/NotFoundPage' /* webpackChunkName: "not-found-page" */
+  ),
+);
 
 function App() {
   const dispatch = useDispatch();
@@ -82,7 +82,11 @@ function App() {
                 <PrivateRoute component={ContactsPage} redirectTo="/login" />
               }
             />
-            {/* <Route path="*" element={'Error'} /> */}
+            {/* <Route
+              path="*"
+              element={<PublicRoute component={NotFoundPage} redirectTo="/" />}
+            /> */}
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
         <ToastContainer position="top-right" autoClose={5000} theme="dark" />

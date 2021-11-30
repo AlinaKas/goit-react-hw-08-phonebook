@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import s from './Form.module.css';
 import { addContact } from 'redux/contacts/contacts-operations';
-// import { connect } from 'react-redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/contacts/contacts-selectors';
 import { toast } from 'react-toastify';
@@ -93,11 +92,5 @@ const Form = () => {
     </div>
   );
 };
-
-// const mapDispatchToProps = dispatch => ({
-//   addContact: (name, number) => dispatch(addContact(name, number)),
-// });
-
-// export default connect(null, mapDispatchToProps)(Form);
 
 export default Form;
