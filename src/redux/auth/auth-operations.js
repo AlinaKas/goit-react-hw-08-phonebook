@@ -104,7 +104,7 @@ const refreshCurrentUser = createAsyncThunk(
       const response = await axios.get(userCurrent);
       return response.data;
     } catch (error) {
-      toast.info(`LogIn to access the PhoneBook`);
+      toast.info(`Log in to access the PhoneBook`);
       return thunkAPI.rejectWithValue(error.message);
     }
   },

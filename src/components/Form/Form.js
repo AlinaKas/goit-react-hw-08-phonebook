@@ -32,9 +32,9 @@ const Form = () => {
     const duplicateContact = contacts.find(contact => {
       return (
         (contact.name.toLowerCase() === name.toLowerCase() &&
-          toast.info(`The contact with name "${name}" already exists`)) ||
+          toast.info(`The contact "${name}" already exists`)) ||
         (contact.number === number &&
-          toast.info(`The contact with tel. "${number}" already exists`))
+          toast.info(`The contact "${number}" already exists`))
       );
     });
 
@@ -57,36 +57,34 @@ const Form = () => {
     <div className={s.container}>
       {/* <h1 className={s.title}>My PhoneBook</h1> */}
       <form className={s.form} onSubmit={handleSubmit}>
-        <div className={s.inputWrapper}>
-          <label className={s.label}>
-            <span className={s.descriptionName}>Name</span>
-            <input
-              className={s.input}
-              type="text"
-              name="name"
-              placeholder="Rosie Simpson"
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-              required
-              value={name}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label className={s.label}>
-            <span className={s.description}>Number</span>
-            <input
-              className={s.input}
-              type="tel"
-              name="number"
-              placeholder="+38(0XX)-XXX-XX-XX"
-              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              title="Номер телефона должен состоять из цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-              required
-              value={number}
-              onChange={handleInputChange}
-            />
-          </label>
-        </div>
+        <label className={s.label}>
+          <span className={s.descriptionName}>Name</span>
+          <input
+            className={s.input}
+            type="text"
+            name="name"
+            placeholder="Rosie Simpson"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+            required
+            value={name}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label className={s.label}>
+          <span className={s.description}>Number</span>
+          <input
+            className={s.input}
+            type="tel"
+            name="number"
+            placeholder="+38(0XX)-XXX-XX-XX"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Номер телефона должен состоять из цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
+            required
+            value={number}
+            onChange={handleInputChange}
+          />
+        </label>
 
         <button className={s.btn} type="submit">
           Add contact
