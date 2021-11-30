@@ -2,16 +2,14 @@
 
 .form {
     display: flex;
-    flex-direction: column;
-    padding: 20px;
-    /* margin-bottom: 20px;
-    font-family: Arial, Helvetica, sans-serif; */
+    flex-wrap: wrap;
+    padding: 10px 15px;
     border: 1px solid black;
     background-color: rgba(151, 151, 151, 0.939);
     border-radius: 20px;
 }
 
-.title {
+/* .title {
     margin-bottom: 15px;
     padding: 5px;
     text-align: center;
@@ -20,30 +18,31 @@
     background-color: rgba(5, 167, 173, 0.953);
     border-radius: 20px;
       box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
+} */
+
+.inputWrapper{
+display: flex;
+justify-content: space-between;
 }
 
 .label {
-    /* display: flex;
-    flex-direction: column; */
-    margin-bottom: 20px;
-    margin-right: 10px;
+   display: flex;
+    /* flex-direction: column; */
+   /* width: 70%; */
+   margin-right: 10px;
    font-weight: 500;
    font-size: 20px;
    /* color:rgb(255, 255, 255); */
 }
 
-.descriptionName{
-    margin-right: 29px;
-}
-
-.descriptionNumber{
-    margin-right: 10px;
+.description{
+    margin-right: 5px;
 }
 
 .input{
-    width: 70%;
     height: 30px;
     text-transform: capitalize;
+    margin-bottom: 5px;
     padding-left: 12px;
     padding-top: 2px;
     padding-bottom: 2px;
@@ -52,14 +51,15 @@
     outline-color: rgb(25, 121, 124);
 
 }
+
 .btn {
     width: 150px;
     height: 30px;
-    font-size: 20px;
     margin: 0 auto;
+    font-size: 20px;
      color: #ffffff;
   background-color: rgba(5, 167, 173, 0.938);
-  border: none;
+ border: 1px solid #ffffff;
   border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;

@@ -3,15 +3,15 @@
 // import Filter from 'components/Filter';
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useEffect, useSelector } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PrivateRoute from 'routes/PrivateRoute';
 import PublicRoute from 'routes/PublicRoute';
 import Container from 'components/Container';
 import AppBar from 'components/AppBar';
 import PreLoader from 'components/Preloader/Preloader';
-import { authOperations, authSelectors } from 'redux/auth';
-import { ToastContainer, toast } from 'react-toastify';
+import { authOperations } from 'redux/auth';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const HomePage = lazy(() =>

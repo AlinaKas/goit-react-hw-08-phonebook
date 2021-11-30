@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from 'redux/auth/auth-operations';
 import s from './RegisterPage.module.css';
-import { toast } from 'react-toastify';
 
 export default function RegisterPage() {
   const dispatch = useDispatch();
@@ -12,7 +11,6 @@ export default function RegisterPage() {
   // const [error, setError] = useState('');
 
   const handleChange = e => {
-    // e.target.name e.target.value
     switch (e.target.name) {
       case 'name':
         return setName(e.target.value);

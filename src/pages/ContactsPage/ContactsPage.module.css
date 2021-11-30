@@ -1,24 +1,22 @@
 .wrapper {
-  width: 70%;
-  margin: 20px auto;
-  padding: 60px;
+
+  margin: 10px auto;
+  padding: 20px 60px;
   text-align: start;
   /* background-color: rgba(35, 29, 29, 0.881); */
   border-radius: 20px;
   border: 1px solid rgba(52, 52, 52, 0.922);
   box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
 }
-.content {
-  display: flex;
-}
+
 
 .title {
-    margin-bottom: 15px;
+    margin-top: 15px;
     padding: 5px;
     text-align: center;
     font-size: 25px;
     color: #ffffff;
-    background-color: rgba(5, 167, 173, 0.953);
-    border-radius: 20px;
+    /* background-color: rgba(5, 167, 173, 0.953); */
+    /* border-radius: 20px; */
       box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
 }

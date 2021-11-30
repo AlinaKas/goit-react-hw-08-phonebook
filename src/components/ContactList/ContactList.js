@@ -27,24 +27,28 @@ const ContactList = () => {
   return (
     <>
       {contacts.length === 0 ? (
-        <h2 className={s.title}>No contacts in the PhoneBook</h2>
+        <div className={s.titleWrap}>
+          <h2 className={s.title}>No contacts in the PhoneBook</h2>
+        </div>
       ) : (
         <div className={s.container}>
           <h2 className={s.title}>Contacts</h2>
           <ul className={s.list}>
-            {contacts.map(({ name, number, id }) => (
-              <li key={id} className={s.item}>
-                <span className={s.name}> {`${name}: `}</span>
-                {`${number}`}
-                <button
-                  className={s.btn}
-                  type="button"
-                  onClick={() => dispatch(deleteContact(id))}
-                >
-                  Delete
-                </button>
-              </li>
-            ))}
+            {[...contacts]
+              .sort((a, b) => a.name.localeCompare(b.name)) //cортировка в алфавитном порядке  [...contacts].sort((a, b) => a.name.localeCompare(b.name));
+              .map(({ name, number, id }) => (
+                <li key={id} className={s.item}>
+                  <span className={s.name}> {`${name}: `}</span>
+                  {`${number}`}
+                  <button
+                    className={s.btn}
+                    type="button"
+                    onClick={() => dispatch(deleteContact(id))}
+                  >
+                    Delete
+                  </button>
+                </li>
+              ))}
           </ul>
         </div>
       )}
