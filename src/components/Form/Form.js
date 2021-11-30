@@ -59,7 +59,7 @@ const Form = () => {
       <form className={s.form} onSubmit={handleSubmit}>
         <div className={s.inputWrapper}>
           <label className={s.label}>
-            <span className={s.description}>Name</span>
+            <span className={s.descriptionName}>Name</span>
             <input
               className={s.input}
               type="text"

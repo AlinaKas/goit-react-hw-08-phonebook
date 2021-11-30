@@ -1,6 +1,6 @@
 .container {
   max-width: 400px;
-  margin: 50px auto;
+  margin: 30px auto;
   padding: 30px;
   text-align: start;
   background-color: rgba(35, 29, 29, 0.881);
@@ -20,8 +20,8 @@
 
 .title {
 text-align: center;
-margin-bottom: 15px;
-font-size: 30px;
+margin-bottom: 10px;
+font-size: 25px;
 color: rgba(255, 255, 255, 0.819);
 }
 
@@ -37,8 +37,8 @@ color: rgba(255, 255, 255, 0.819);
 }
 .input{
     width: 100%;
-    height: 50px;
-    margin-top: 6px;
+    height: 30px;
+    margin-top: 10px;
     padding-left: 12px;
     padding-top: 2px;
     padding-bottom: 2px;
@@ -60,7 +60,7 @@ color: rgba(255, 255, 255, 0.819);
 .button {
   width: 100%;
   margin-top: 10px;
-  padding: 15px;
+  padding: 10px;
   font-size: 18px;
   font-weight: 700;
   text-align: center;

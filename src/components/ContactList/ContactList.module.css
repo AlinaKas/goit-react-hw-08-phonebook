@@ -2,7 +2,7 @@
 padding: 10px 60px;
 margin-top: 20px;
 border: 1px solid black;
-background-color: rgba(151, 151, 151, 0.939);
+background-color: rgb(151, 151, 151);
 border-radius: 20px;
 box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
 }
@@ -23,7 +23,6 @@ box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
 .title {
     margin-bottom: 5px;
     font-size: 25px;
-
 }
 
 .titleWrap{
@@ -62,8 +61,8 @@ color: rgb(0, 0, 0);
 .btn {
   margin-left: auto;
   width: 100px;
-  padding: 5px 10px;
-  font-size: 18px;
+  padding: 5px;
+  font-size: 15px;
   text-align: center;
   color: #ffffff;
   background-color: rgba(5, 167, 173, 0.839);
