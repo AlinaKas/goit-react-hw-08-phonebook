@@ -34,7 +34,8 @@ const ContactList = () => {
           <ul className={s.list}>
             {contacts.map(({ name, number, id }) => (
               <li key={id} className={s.item}>
-                <span className={s.description}>{`${name}: ${number}`}</span>
+                <span className={s.name}> {`${name}: `}</span>
+                {`${number}`}
                 <button
                   className={s.btn}
                   type="button"

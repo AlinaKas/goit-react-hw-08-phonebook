@@ -17,7 +17,6 @@ border-radius: 20px;
     border-radius: 20px;
     box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px 5px;
 
-
 }
 
 .list {
@@ -33,6 +32,7 @@ border-radius: 20px;
     border: 1px solid black;
     background-color: rgba(230, 225, 225, 0.726);
     border-radius: 20px;
+    text-transform: capitalize;
 
 }
 
@@ -40,8 +40,9 @@ border-radius: 20px;
     margin-bottom: 5px;
 }
 
-.description{
+.name{
 margin-right: 10px;
+color: rgb(0, 0, 0);
 }
 
 .btn {
