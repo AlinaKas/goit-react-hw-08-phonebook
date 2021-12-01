@@ -55,7 +55,10 @@ a {
 
 .active {
   display: inline-block;
-/* padding: 20px; */
   color: #ffffff;
   cursor: default;
+}
+
+.active:hover{
+  color: #ffffff;
 }
