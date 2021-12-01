@@ -2,7 +2,7 @@
 // import Form from 'components/Form';
 // import Filter from 'components/Filter';
 import { lazy, Suspense } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PrivateRoute from 'routes/PrivateRoute';
@@ -78,9 +78,7 @@ function App() {
             />
             <Route
               path="/contacts"
-              element={
-                <PrivateRoute component={ContactsPage} redirectTo="/login" />
-              }
+              element={<PrivateRoute component={ContactsPage} redirectTo="/" />}
             />
             {/* <Route
               path="*"
