@@ -4,7 +4,7 @@ export default function NotFoundPage() {
       style={{
         margin: '50px auto',
         // width: '100%',
-        fontSize: '40px',
+        fontSize: '30px',
         fontWeight: '700',
       }}
     >

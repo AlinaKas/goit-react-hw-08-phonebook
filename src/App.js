@@ -4,13 +4,13 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PrivateRoute from 'routes/PrivateRoute';
 import PublicRoute from 'routes/PublicRoute';
 import Container from 'components/Container';
 import AppBar from 'components/AppBar';
 import PreLoader from 'components/Preloader/Preloader';
-import { authOperations } from 'redux/auth';
+import { authOperations, authSelectors } from 'redux/auth';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -38,58 +38,64 @@ const NotFoundPage = lazy(() =>
 
 function App() {
   const dispatch = useDispatch();
-  // const isFetchingCurrentUser = useSelector(authSelectors.getIsCurrentUser)
+  const isFetchingCurrentUser = useSelector(authSelectors.getIsCurrentUser);
 
   useEffect(() => {
     dispatch(authOperations.refreshCurrentUser());
   }, [dispatch]);
 
   return (
-    <Container>
-      <AppBar />
-      <main>
-        <Suspense fallback={<PreLoader />}>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <PublicRoute component={HomePage} redirectTo="/contacts" />
-              }
-            />
-            <Route
-              path="/login"
-              element={
-                <PublicRoute
-                  component={LoginPage}
-                  redirectTo="/contacts"
-                  restricted
-                />
-              }
-            />
-            <Route
-              path="/register"
-              element={
-                <PublicRoute
-                  component={RegisterPage}
-                  redirectTo="/"
-                  restricted
-                />
-              }
-            />
-            <Route
-              path="/contacts"
-              element={<PrivateRoute component={ContactsPage} redirectTo="/" />}
-            />
-            {/* <Route
-              path="*"
-              element={<PublicRoute component={NotFoundPage} redirectTo="/" />}
-            /> */}
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
-        <ToastContainer position="top-right" autoClose={5000} theme="dark" />
-      </main>
-    </Container>
+    !isFetchingCurrentUser && (
+      <Container>
+        <AppBar />
+        <main>
+          <Suspense fallback={<PreLoader />}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <PublicRoute component={HomePage} redirectTo="/contacts" />
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <PublicRoute
+                    component={LoginPage}
+                    redirectTo="/contacts"
+                    restricted
+                  />
+                }
+              />
+              <Route
+                path="/register"
+                element={
+                  <PublicRoute
+                    component={RegisterPage}
+                    redirectTo="/"
+                    restricted
+                  />
+                }
+              />
+              <Route
+                path="/contacts"
+                element={
+                  <PrivateRoute component={ContactsPage} redirectTo="/login" />
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <PublicRoute component={NotFoundPage} redirectTo="/" />
+                }
+              />
+              {/* <Route path="*" element={<NotFoundPage />} /> */}
+            </Routes>
+          </Suspense>
+          <ToastContainer position="top-right" autoClose={5000} theme="dark" />
+        </main>
+      </Container>
+    )
   );
 }
 // }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from 'redux/auth/auth-operations';
+import { Link } from 'react-router-dom';
 import s from './RegisterPage.module.css';
 
 export default function RegisterPage() {
@@ -76,6 +77,12 @@ export default function RegisterPage() {
         <button type="submit" className={s.button}>
           SIGN UP
         </button>
+        <p className={s.text}>
+          Do you have an account?
+          <Link to="/login" className={s.link}>
+            Log in
+          </Link>
+        </p>
       </form>
     </div>
   );

@@ -1,8 +1,8 @@
 // import axios from 'axios';
-// axios.defaults.baseURL =
-//     'https://61965d6eaf46280017e7dff4.mockapi.io/api/phonebook';
 import { createSlice } from '@reduxjs/toolkit';
 import authOperations from './auth-operations';
+// axios.defaults.baseURL =
+//     'https://61965d6eaf46280017e7dff4.mockapi.io/api/phonebook';
 
 const initialState = {
   user: {

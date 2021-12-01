@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from 'redux/auth/auth-operations';
+import { Link } from 'react-router-dom';
 import s from './LoginPage.module.css';
 
 export default function LoginPage() {
@@ -55,6 +56,12 @@ export default function LoginPage() {
         <button type="submit" className={s.button}>
           LOG IN
         </button>
+        <p className={s.text}>
+          Are you a new user?
+          <Link to="/register" className={s.link}>
+            Sign up
+          </Link>
+        </p>
       </form>
     </div>
   );
